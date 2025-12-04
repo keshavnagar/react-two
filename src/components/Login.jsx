@@ -1,8 +1,7 @@
 import { useState } from "react";
 
 const Login = () => {
-  const [username, setUsername] = useState("Sushil");
-  const [password, setPassword] = useState("09876");
+  
   const handleInput = (e) => {
     const { name, value } = e.target;
     switch (name) {
