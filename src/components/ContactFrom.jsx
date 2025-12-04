@@ -8,9 +8,8 @@ const ContactForm = () => {
   });
   const handleInput = (e) => {
     const { name, value } = e.target;
-    
-        setMessageDetail((prev) => ({ ...prev, [name]: value }));
-       
+
+    setMessageDetail((prev) => ({ ...prev, [name]: value }));
   };
   const handleForm = (e) => {
     e.preventDefault();
@@ -38,13 +37,12 @@ const ContactForm = () => {
           />
         </label>
         <label>
-          Message:{" "}
-          <input
-            type="text"
+          Message:
+          <textarea
             value={messageDetail.message}
             name="message"
             onChange={handleInput}
-          />
+          ></textarea>
         </label>
         <button type="submit">send message</button>
       </form>
