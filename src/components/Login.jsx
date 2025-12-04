@@ -3,16 +3,7 @@ const Login = () => {
   const [user, setUser] = useState({ username: "rahul", password: "23@rahul" });
   const handleInput = (e) => {
     const { name, value } = e.target;
-    switch (name) {
-      case "username":
-        setUser((prev) => ({ ...prev, username: value }));
-        break;
-      case "password":
-        setUser((prev) => ({ ...prev, password: value }));
-        break;
-      default:
-        break;
-    }
+    setUser((prev) => ({ ...prev, [name]: value }));
   };
   const handleForm = (e) => {
     e.preventDefault();
