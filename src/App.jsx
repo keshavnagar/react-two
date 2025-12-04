@@ -1,8 +1,8 @@
-import Login from "./components/Login";
+import ContactForm from "./components/ContactFrom";
 const App = () => {
   return (
     <>
-      <Login />
+      <ContactForm />
     </>
   );
 };
