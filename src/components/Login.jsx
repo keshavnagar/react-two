@@ -1,15 +1,14 @@
 import { useState } from "react";
-
 const Login = () => {
   const [user, setUser] = useState({ username: "rahul", password: "23@rahul" });
   const handleInput = (e) => {
     const { name, value } = e.target;
     switch (name) {
       case "username":
-        setUser(() => ({ ...prev, username: value }));
+        setUser((prev) => ({ ...prev, username: value }));
         break;
       case "password":
-        setUser(() => ({ ...prev, password: value }));
+        setUser((prev) => ({ ...prev, password: value }));
         break;
       default:
         break;
@@ -17,10 +16,8 @@ const Login = () => {
   };
   const handleForm = (e) => {
     e.preventDefault();
-    const user = { username, password };
     console.log(user);
   };
-
   return (
     <>
       <form onSubmit={handleForm}>
