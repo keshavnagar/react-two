@@ -8,19 +8,9 @@ const ContactForm = () => {
   });
   const handleInput = (e) => {
     const { name, value } = e.target;
-    switch (name) {
-      case "name":
-        setMessageDetail((prev) => ({ ...prev, name: value }));
-        break;
-      case "email":
-        setMessageDetail((prev) => ({ ...prev, email: value }));
-        break;
-      case "message":
-        setMessageDetail((prev) => ({ ...prev, message: value }));
-        break;
-      default:
-        console.log("wrong choice");
-    }
+    
+        setMessageDetail((prev) => ({ ...prev, [name]: value }));
+       
   };
   const handleForm = (e) => {
     e.preventDefault();
