@@ -1,20 +1,22 @@
 import { useState } from "react";
 
 const ContactForm = () => {
-  const [name, setName] = useState("Keshav");
-  const [email, setEmail] = useState("keshavnagar887@gmail.com");
-  const [message, setMessage] = useState("hello lets connect");
+  const [messageDetail, setMessageDetail] = useState({
+    name: "keshav",
+    email: "keshavnagar887@gmail.com",
+    message: "let's connect",
+  });
   const handleInput = (e) => {
     const { name, value } = e.target;
     switch (name) {
       case "name":
-        setName(value);
+        setMessageDetail((prev) => ({ ...prev, name: value }));
         break;
       case "email":
-        setEmail(value);
+        setMessageDetail((prev) => ({ ...prev, email: value }));
         break;
       case "message":
-        setMessage(value);
+        setMessageDetail((prev) => ({ ...prev, message: value }));
         break;
       default:
         console.log("wrong choice");
@@ -22,25 +24,25 @@ const ContactForm = () => {
   };
   const handleForm = (e) => {
     e.preventDefault();
-    const user = {
-      name,
-      email,
-      message,
-    };
-    console.log(user);
+    console.log(messageDetail);
   };
   return (
     <>
       <form onSubmit={handleForm}>
         <label>
           Name:{" "}
-          <input type="text" value={name} name="name" onChange={handleInput} />
+          <input
+            type="text"
+            value={messageDetail.name}
+            name="name"
+            onChange={handleInput}
+          />
         </label>
         <label>
           Email:{" "}
           <input
             type="email"
-            value={email}
+            value={messageDetail.email}
             name="email"
             onChange={handleInput}
           />
@@ -49,7 +51,7 @@ const ContactForm = () => {
           Message:{" "}
           <input
             type="text"
-            value={message}
+            value={messageDetail.message}
             name="message"
             onChange={handleInput}
           />
