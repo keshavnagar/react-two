@@ -6,10 +6,10 @@ const Login = () => {
     const { name, value } = e.target;
     switch (name) {
       case "username":
-        setUsername(value);
+        setUser(() => ({ ...prev, username: value }));
         break;
       case "password":
-        setPassword(value);
+        setUser(() => ({ ...prev, password: value }));
         break;
       default:
         break;
